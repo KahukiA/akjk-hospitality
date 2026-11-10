@@ -1,0 +1,7 @@
+<Image
+  src="/images/hero/hero.jpg"
+  alt="AKJK Hospitality"
+  fill
+  priority
+  className="object-cover"
+/>
