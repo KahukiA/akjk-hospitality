@@ -32,7 +32,7 @@ export default function ContactPage() {
             <div className="mt-8 space-y-4 rounded-xl border border-[#D6D3D1] bg-white p-6">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wider text-[#B8860B]">Phone</p>
-                <a href="tel:+254786182833" className="mt-2 inline-block text-lg text-[#1E1E1E] hover:text-[#C89211]">+254 786 182 833</a>
+                <a href="tel:+254706188231" className="mt-2 inline-block text-lg text-[#1E1E1E] hover:text-[#C89211]">+254 706 188 231</a>
               </div>
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wider text-[#B8860B]">Phone</p>

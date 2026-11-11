@@ -852,7 +852,7 @@ export default function AKJKWebsite() {
                             Phone
                           </p>
                           <p className="text-base text-[#F8F5EE] font-medium">
-                            +254 700 000 000
+                            +254 706 188 231<br />+255 659 359 005
                           </p>
                         </div>
                       </div>
@@ -866,7 +866,7 @@ export default function AKJKWebsite() {
                             Email
                           </p>
                           <p className="text-base text-[#F8F5EE] font-medium">
-                            info@akjkhospitality.com
+                            austinkahuki@outlook.com
                           </p>
                         </div>
                       </div>
