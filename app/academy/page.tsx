@@ -137,13 +137,13 @@ function RollingCarousel({
           {/* Content Overlay */}
           <div className={`absolute inset-0 z-10 flex ${textPlacement === "bottom" ? "items-end" : textPlacement === "top" ? "items-start" : "items-center"}`}>
             <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-14">
-              <div className={`mx-auto w-full max-w-5xl ${textPlacement === "bottom" ? "pb-40 sm:pb-32 lg:pb-32" : textPlacement === "top" ? "pt-28 sm:pt-32 lg:pt-36" : ""}`}>
+              <div className={`mx-auto w-full max-w-[1500px] ${textPlacement === "bottom" ? "pb-40 sm:pb-32 lg:pb-32" : textPlacement === "top" ? "pt-28 sm:pt-32 lg:pt-36" : ""}`}>
                 <span className="inline-flex items-center gap-2 rounded-full border border-[#D4A72C]/40 bg-black/60 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-[#D4A72C] backdrop-blur-md">
                   <Flame className="h-3.5 w-3.5 text-[#D4A72C]" />
                   {activeSlide.tag}
                 </span>
 
-                <h1 className="mt-6 whitespace-normal text-[clamp(2rem,4vw,4rem)] font-black leading-tight text-[#F8F5EE] lg:whitespace-nowrap">
+                <h1 className="mx-auto mt-6 max-w-[1450px] whitespace-normal text-[clamp(2rem,3.2vw,3.5rem)] font-black leading-tight text-[#F8F5EE]">
                   {activeSlide.title}
                 </h1>
 
