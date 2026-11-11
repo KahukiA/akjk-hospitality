@@ -1,6 +1,7 @@
 // @/components/Footer.tsx
 import Link from "next/link";
 import { Mail, Phone, MapPin, Award } from "lucide-react";
+import RegionalImageCarousel from "./RegionalImageCarousel";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -17,6 +18,7 @@ const serviceLinks = [
   { name: "F&B & Menu Engineering", href: "/services" },
   { name: "Pre-Opening Management", href: "/services" },
   { name: "Revenue & Cost Turnaround", href: "/services" },
+  { name: "Talent Search & Recruitment", href: "/services" },
 ];
 
 const regions = ["Kenya", "Tanzania", "Uganda", "Rwanda"];
@@ -28,10 +30,11 @@ export default function Footer() {
       <div className="h-1.5 w-full bg-gradient-to-r from-[#C89211] via-[#F8F5EE] to-[#C89211]" />
 
       <div className="mx-auto max-w-[1600px] px-6 py-16 lg:px-14 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-12">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:gap-12">
+          <div className="grid gap-10 sm:grid-cols-2">
           
           {/* Column 1: Brand & Crest Header */}
-          <div className="lg:col-span-4">
+          <div>
             <Link
               href="/"
               className="flex items-center gap-2 text-2xl font-black text-white"
@@ -68,7 +71,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Navigation Links */}
-          <div className="lg:col-span-2">
+          <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#C89211]">
               Navigation
             </h3>
@@ -87,7 +90,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Core Services */}
-          <div className="lg:col-span-3">
+          <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#C89211]">
               Core Offerings
             </h3>
@@ -106,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Direct Contact Info */}
-          <div className="lg:col-span-3">
+          <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#C89211]">
               Contact Us
             </h3>
@@ -138,7 +141,8 @@ export default function Footer() {
               <span>Managing Directors: Austin Kahuki & Joseph Kiarie</span>
             </div>
           </div>
-
+          </div>
+          <RegionalImageCarousel />
         </div>
 
         {/* Bottom Bar: Copyright */}

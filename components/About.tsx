@@ -1,6 +1,6 @@
 // @/components/About.tsx
-import Image from "next/image";
-import { Award, CheckCircle2, ShieldCheck, Users } from "lucide-react";
+import { CheckCircle2, Users } from "lucide-react";
+import BrandCrest from "./BrandCrest";
 
 const founders = [
   {
@@ -20,6 +20,24 @@ const coreValues = [
   "Tailored On-Site & Classroom Training",
   "Financial Controls & Yield Management",
   "Regional Footprint across East Africa",
+];
+
+const philosophicalPillars = [
+  {
+    title: "Strategic Solutions",
+    description:
+      "Practical advice that improves profitability, controls costs, and strengthens daily operations.",
+  },
+  {
+    title: "Operational Excellence",
+    description:
+      "Consistent, efficient service built through clear standards, capable teams, and thoughtful leadership.",
+  },
+  {
+    title: "Legacy",
+    description:
+      "Developing hospitality experts and raising the standard of hospitality across East Africa.",
+  },
 ];
 
 export default function About() {
@@ -83,9 +101,7 @@ export default function About() {
             <div className="relative overflow-hidden rounded-3xl border-2 border-[#C89211]/40 bg-gradient-to-b from-[#1E1E1E] to-black p-8 text-center shadow-2xl">
               
               {/* Crest Symbol Representation */}
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#C89211] bg-[#111111] text-[#C89211] shadow-inner">
-                <Award className="h-12 w-12" />
-              </div>
+              <BrandCrest className="mx-auto h-28 w-32 drop-shadow-[0_0_14px_rgba(212,167,44,0.15)]" />
 
               <h4 className="mt-6 text-2xl font-black tracking-tight text-[#F8F5EE]">
                 AK&JK
@@ -107,6 +123,36 @@ export default function About() {
             </div>
           </div>
 
+        </div>
+
+        <div className="mt-20 border-t border-[#C89211]/20 pt-16">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#C89211]">
+              Philosophical Pillars
+            </p>
+            <h3 className="mt-3 text-3xl font-bold text-[#F8F5EE] sm:text-4xl">
+              Core Brand Philosophy
+            </h3>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {philosophicalPillars.map((pillar, index) => (
+              <article
+                key={pillar.title}
+                className="rounded-2xl border border-[#C89211]/25 bg-[#171717] p-7 shadow-lg"
+              >
+                <span className="text-sm tracking-[0.2em] text-[#D4A72C]">
+                  0{index + 1}
+                </span>
+                <h4 className="mt-4 text-xl font-bold text-[#F8F5EE]">
+                  {pillar.title}
+                </h4>
+                <p className="mt-3 text-sm leading-7 text-[#D1D5DB]">
+                  {pillar.description}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
 
         {/* Founders / Leadership Section */}

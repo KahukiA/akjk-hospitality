@@ -1,87 +1,83 @@
-// @/components/Navbar.tsx
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Academy", href: "/academy" },
-];
+import BrandCrest from "./BrandCrest";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Academy", href: "/academy" },
+    { label: "Contact", href: "/contact" },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F8F5EE] border-b border-[#D6D3D1]/50 shadow-sm">
-      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 lg:px-14">
-        
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-1.5 text-2xl font-black tracking-tight text-[#111111]">
-          <span>AK</span>
-          <span className="text-[#C89211]">JK</span>
-          <span className="font-light text-[#444444] ml-1">Hospitality</span>
+    <header className="relative z-30 border-b border-[#D4A72C]/20 bg-[#090A0B]">
+      <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-3 sm:px-6 lg:px-10">
+        <Link href="/" className="flex items-center gap-2.5 text-[#F8F5EE]" aria-label="AK&JK Hospitality home">
+          <BrandCrest className="h-10 w-11 shrink-0 sm:h-11 sm:w-12" />
+          <span className="flex flex-col">
+            <span className="text-xl font-semibold leading-none tracking-[-0.04em] sm:text-2xl">
+              AK&amp;JK
+            </span>
+            <span className="mt-1 text-[0.48rem] font-bold uppercase tracking-[0.17em] text-[#D4A72C] sm:text-[0.55rem] sm:tracking-[0.2em]">
+              Hospitality Consultancy
+            </span>
+          </span>
         </Link>
 
-        {/* Desktop Navigation Links & Action Button */}
-        <div className="hidden items-center gap-8 md:flex">
-          <nav className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-base font-medium text-[#111111] transition-colors hover:text-[#C89211]"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+        <nav className="hidden items-center gap-7 md:flex lg:gap-9" aria-label="Main navigation">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="text-sm font-semibold text-[#F1ECE3] transition-colors hover:text-[#D4A72C] lg:text-base">
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
-          <Link
-            href="/contact"
-            className="rounded-xl bg-[#C89211] px-6 py-3 text-base font-bold text-white shadow-md transition-all hover:bg-[#A9790E] hover:shadow-lg"
-          >
-            Contact Us
-          </Link>
-        </div>
+        <Link
+          href="/contact"
+          className="hidden rounded-lg bg-[#C89211] px-5 py-3 text-sm font-bold text-[#111111] transition hover:bg-[#E1B540] md:inline-flex lg:px-7"
+        >
+          Contact Us
+        </Link>
 
-        {/* Mobile Hamburger Toggle Button */}
         <button
           type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="rounded-lg p-2 text-[#111111] hover:bg-[#EAE4D6] md:hidden"
-          aria-label="Toggle Navigation Menu"
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen((open) => !open)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#D4A72C]/40 text-[#F8F5EE] transition hover:bg-white/5 md:hidden"
         >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="border-t border-[#D6D3D1] bg-[#F8F5EE] px-6 py-6 md:hidden">
-          <nav className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+        <nav className="border-t border-[#D4A72C]/20 bg-[#090A0B] px-5 pb-5 pt-3 md:hidden" aria-label="Mobile navigation">
+          <div className="mx-auto flex max-w-[1500px] flex-col gap-1">
+            {navItems.map((item) => (
               <Link
-                key={link.name}
-                href={link.href}
+                key={item.href}
+                href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-semibold text-[#111111] hover:text-[#C89211]"
+                className="rounded-md px-3 py-2.5 text-sm font-semibold text-[#F1ECE3] transition hover:bg-white/5 hover:text-[#D4A72C]"
               >
-                {link.name}
+                {item.label}
               </Link>
             ))}
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-2 inline-block rounded-xl bg-[#C89211] px-6 py-3.5 text-center text-base font-bold text-white shadow-md transition hover:bg-[#A9790E]"
+              className="mt-2 inline-flex justify-center rounded-lg bg-[#C89211] px-5 py-3 text-sm font-bold text-[#111111]"
             >
               Contact Us
             </Link>
-          </nav>
-        </div>
+          </div>
+        </nav>
       )}
     </header>
   );

@@ -1,18 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "AK&JK Hospitality | Elevating African Hospitality Excellence",
@@ -35,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="bg-[#F7F3EA] text-[#1E1E1E] font-[var(--font-body)] antialiased">
+    <html lang="en">
+      <body className="bg-[#F7F3EA] text-[#1E1E1E] antialiased">
         {children}
       </body>
     </html>

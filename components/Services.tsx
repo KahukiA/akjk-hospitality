@@ -1,5 +1,6 @@
 // @/components/Services.tsx
 import Link from "next/link";
+import CrestWatermarkSlot from "./CrestWatermarkSlot";
 import {
   Briefcase,
   GraduationCap,
@@ -68,6 +69,12 @@ const services = [
       "Strategic interventions for underperforming hospitality businesses to boost revenue and operational efficiency.",
     icon: TrendingUp,
   },
+  {
+    title: "Hospitality Talent Search & Recruitment",
+    description:
+      "Finding and assessing hospitality professionals for key roles, with tailored hiring support from candidate search through selection.",
+    icon: Users,
+  },
 ];
 
 export default function Services() {
@@ -90,7 +97,7 @@ export default function Services() {
           </p>
         </div>
 
-        {/* 9 Services Grid */}
+        {/* 10 Services Grid */}
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
@@ -124,6 +131,7 @@ export default function Services() {
               </div>
             );
           })}
+          <CrestWatermarkSlot className="hidden min-h-[360px] lg:col-span-2 lg:flex" crestClassName="h-52 w-60" />
         </div>
 
         {/* Bottom Banner */}
